@@ -11,35 +11,35 @@ def main():
 		
 @route('/')
 def home():
-	return static_file('index.html',root=ROOT_DIR + '/static')
+	return static_file('index.html',root=ROOT_DIR)
 
 @route('/main')
 def main_content():
-	return static_file('main.html',root=ROOT_DIR + '/static')	
+	return static_file('main.html',root=ROOT_DIR)	
 	
 @route('/libs/js/<filename>')
 def serve_js(filename):
 	return static_file(filename,root=ROOT_DIR + '/libs/js')	
 	
-@route('/static/<filename:path>')	
+@route('/<filename:path>')	
 def serve_static(filename):
-	return static_file(filename,root=ROOT_DIR + '/static')
+	return static_file(filename,root=ROOT_DIR)
 
-@route('/static/css/<filename>')	
+@route('/css/<filename>')	
 def serve_css(filename):
-	return static_file(filename,root=ROOT_DIR + '/static/css')
+	return static_file(filename,root=ROOT_DIR + '/css')
 
-@route('/static/less/<filename>')	
+@route('/less/<filename>')	
 def serve_less(filename):
-	return static_file(filename,root=ROOT_DIR + '/static/less')
+	return static_file(filename,root=ROOT_DIR + '/less')
 	
-@route('/static/fonts/<filename>')
+@route('/fonts/<filename>')
 def serve_font(filename):
-	return static_file(filename,root=ROOT_DIR + '/static/fonts')
+	return static_file(filename,root=ROOT_DIR + '/fonts')
 	
-@route('/static/img/<filename>')
+@route('/	img/<filename>')
 def serve_img(filename):
-	return static_file(filename,root=ROOT_DIR + '/static/img')
+	return static_file(filename,root=ROOT_DIR + '/img')
 
 if __name__ == '__main__':
 	main()
